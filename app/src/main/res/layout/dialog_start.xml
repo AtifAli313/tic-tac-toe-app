@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/surface_container_high"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ARENA SETUP"
+        android:textColor="@color/primary"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-black"
+        android:letterSpacing="0.1"
+        android:layout_marginBottom="24dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PLAYER 1 NAME (X)"
+        android:textColor="@color/on_surface_variant"
+        android:textSize="10sp"
+        android:fontFamily="sans-serif-medium"
+        android:letterSpacing="0.05" />
+
+    <EditText
+        android:id="@+id/editPlayer1Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Architect"
+        android:textColor="@color/white"
+        android:textColorHint="@color/on_surface_variant"
+        android:backgroundTint="@color/primary"
+        android:layout_marginBottom="16dp"
+        android:singleLine="true" />
+
+    <TextView
+        android:id="@+id/labelPlayer2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PLAYER 2 NAME (O)"
+        android:textColor="@color/on_surface_variant"
+        android:textSize="10sp"
+        android:fontFamily="sans-serif-medium"
+        android:letterSpacing="0.05" />
+
+    <EditText
+        android:id="@+id/editPlayer2Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nexus AI"
+        android:textColor="@color/white"
+        android:textColorHint="@color/on_surface_variant"
+        android:backgroundTint="@color/primary"
+        android:singleLine="true" />
+
+    <RadioGroup
+        android:id="@+id/modeGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioAi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="VS AI"
+            android:textColor="@color/white"
+            android:checked="true"
+            android:buttonTint="@color/primary" />
+
+        <RadioButton
+            android:id="@+id/radioPvp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="2 PLAYER"
+            android:textColor="@color/white"
+            android:buttonTint="@color/primary" />
+    </RadioGroup>
+
+</LinearLayout>

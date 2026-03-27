@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Celestial Theme Colors -->
+    <color name="background">#0b1229</color>
+    <color name="surface_container_high">#222941</color>
+    <color name="surface_container_low">#141a32</color>
+    <color name="surface_container_lowest">#060d24</color>
+    <color name="surface_bright">#323851</color>
+
+    <color name="primary">#c3f5ff</color>
+    <color name="primary_variant">#00daf3</color>
+    <color name="primary_container">#00e5ff</color>
+    <color name="on_primary">#00363d</color>
+
+    <color name="on_surface">#dce1ff</color>
+    <color name="on_surface_variant">#bac9cc</color>
+
+    <color name="neon_cyan">#00daf3</color>
+    <color name="outline_variant">#3b494c</color>
+    
+    <color name="glass_bg">#992d344c</color>
+    <color name="glass_border">#1AFFFFFF</color>
+    
+    <color name="active_turn_bg">#1A00e5ff</color>
+    <color name="win_highlight">#40FFEB3B</color>
+</resources>

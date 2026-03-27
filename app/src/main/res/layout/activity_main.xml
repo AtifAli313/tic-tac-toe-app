@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <!-- Top Glow Effect (Simulated) -->
+    <View
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@drawable/active_player_bg"
+        android:alpha="0.1"
+        android:translationY="-100dp"
+        android:translationX="-50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Header -->
+    <TextView
+        android:id="@+id/headerTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Celestial TicTacToe"
+        android:textColor="@color/primary"
+        android:textSize="22sp"
+        android:letterSpacing="-0.02"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Scoreboard Container -->
+    <LinearLayout
+        android:id="@+id/scoreboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="48dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintTop_toBottomOf="@id/headerTitle">
+
+        <!-- Player 1 -->
+        <LinearLayout
+            android:id="@+id/player1Container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/active_player_bg"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/p1Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ARCHITECT (X)"
+                android:textColor="@color/on_surface_variant"
+                android:textSize="10sp"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.1"
+                android:textAllCaps="true" />
+
+            <TextView
+                android:id="@+id/p1Score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/primary"
+                android:textSize="36sp"
+                android:fontFamily="sans-serif-black" />
+        </LinearLayout>
+
+        <!-- VS Divider -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="VS"
+            android:textColor="@color/on_surface_variant"
+            android:alpha="0.3"
+            android:textSize="14sp"
+            android:textStyle="italic|bold" />
+
+        <!-- Player 2 -->
+        <LinearLayout
+            android:id="@+id/player2Container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/inactive_player_bg"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:alpha="0.6"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/p2Label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NEXUS AI (O)"
+                android:textColor="@color/on_surface_variant"
+                android:textSize="10sp"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.1"
+                android:textAllCaps="true" />
+
+            <TextView
+                android:id="@+id/p2Score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="36sp"
+                android:fontFamily="sans-serif-black" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Waiting for Architect..."
+        android:textColor="@color/on_surface_variant"
+        android:textSize="13sp"
+        android:letterSpacing="0.05"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scoreboard" />
+
+    <!-- Grid Container -->
+    <FrameLayout
+        android:id="@+id/gridWrapper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/inactive_player_bg"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/statusText">
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:rowCount="3">
+
+            <Button android:id="@+id/btn_0" android:layout_width="92dp" android:layout_height="92dp" android:layout_margin="6dp" android:background="@drawable/glass_button" android:textColor="@color/primary" android:textSize="44sp" android:fontFamily="sans-serif-black" />
+            <Button android:id="@+id/btn_1" android:layout_width="92dp" android:layout_height="92dp" android:layout_margin="6dp" android:background="@drawable/glass_button" android:textColor="@color/primary" android:textSize="44sp" android:fontFamily="sans-serif-black" />
+            <Button android:id="@+id/btn_2" android:layout_width="92dp" android:layout_height="92dp" android:layout_margin="6dp" android:background="@drawable/glass_button" android:textColor="@color/primary" android:textSize="44sp" android:fontFamily="sans-serif-black" />
+            <Button android:id="@+id/btn_3" android:layout_width="92dp" android:layout_height="92dp" android:layout_margin="6dp" android:background="@drawable/glass_button" android:textColor="@color/primary" android:textSize="44sp" android:fontFamily="sans-serif-black" />
+            <Button android:id="@+id/btn_4" android:layout_width="92dp" android:layout_height="92dp" android:layout_margin="6dp" android:background="@drawable/glass_button" android:textColor="@color/primary" android:textSize="44sp" android:fontFamily="sans-serif-black" />
+            <Button android:id="@+id/btn_5" android:layout_width="92dp" android:layout_height="92dp" android:layout_margin="6dp" android:background="@drawable/glass_button" android:textColor="@color/primary" android:textSize="44sp" android:fontFamily="sans-serif-black" />
+            <Button android:id="@+id/btn_6" android:layout_width="92dp" android:layout_height="92dp" android:layout_margin="6dp" android:background="@drawable/glass_button" android:textColor="@color/primary" android:textSize="44sp" android:fontFamily="sans-serif-black" />
+            <Button android:id="@+id/btn_7" android:layout_width="92dp" android:layout_height="92dp" android:layout_margin="6dp" android:background="@drawable/glass_button" android:textColor="@color/primary" android:textSize="44sp" android:fontFamily="sans-serif-black" />
+            <Button android:id="@+id/btn_8" android:layout_width="92dp" android:layout_height="92dp" android:layout_margin="6dp" android:background="@drawable/glass_button" android:textColor="@color/primary" android:textSize="44sp" android:fontFamily="sans-serif-black" />
+        </GridLayout>
+    </FrameLayout>
+
+    <!-- Controls -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/resetBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        app:backgroundTint="@color/primary_variant"
+        android:paddingHorizontal="40dp"
+        android:paddingVertical="12dp"
+        android:text="RESTART MATCH"
+        android:textColor="@color/on_primary"
+        android:letterSpacing="0.15"
+        android:fontFamily="sans-serif-black"
+        app:cornerRadius="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gridWrapper" />
+
+    <Button
+        android:id="@+id/modeBtn"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Switch Arena Mode"
+        android:textColor="@color/on_surface_variant"
+        android:textSize="11sp"
+        android:fontFamily="sans-serif-medium"
+        android:letterSpacing="0.05"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/resetBtn" />
+
+    <!-- Developer Branding -->
+    <TextView
+        android:id="@+id/devBranding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="Developed by Atif Ali"
+        android:textColor="@color/primary"
+        android:textSize="10sp"
+        android:alpha="0.7"
+        android:fontFamily="sans-serif-medium"
+        android:letterSpacing="0.05"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Bottom Caption -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="PLAYING ON ZENITH STATION (LEVEL 42)"
+        android:textColor="@color/on_surface_variant"
+        android:textSize="9sp"
+        android:alpha="0.4"
+        android:letterSpacing="0.2"
+        app:layout_constraintBottom_toTopOf="@id/devBranding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
